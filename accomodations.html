@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accommodations - Negros Oriental Tourism</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <style>
+    .navbar-nav .nav-link.active {
+      font-weight: bold;
+      border-bottom: 2px solid white;
+    }
+    
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      border: none;
+      border-radius: 0.5rem;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+    
+    .card-title {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 0.75rem;
+    }
+    
+    .card-text {
+      color: #505962;
+      font-size: 0.95rem;
+      flex-grow: 1;
+    }
+    
+    .btn-accommodation {
+      background-color: #27ae60;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      border-radius: 0.25rem;
+    }
+    
+    .btn-accommodation:hover {
+      background-color: #219653;
+    }
+    
+    .header-section {
+      background: linear-gradient(135deg, #27ae60, #1abc9c);
+      padding: 4rem 0;
+    }
+    
+    .header-title {
+      font-weight: 700;
+      font-size: 2.75rem;
+    }
+    
+    .header-lead {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    
+    .accommodation-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: rgba(0,0,0,0.6);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    
+    .amenities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .amenity-badge {
+      background-color: #f1f9f3;
+      color: #27ae60;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .price-range {
+      font-weight: 600;
+      color: #27ae60;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-info {
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .rating {
+      color: #f39c12;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Negros Oriental</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="accomodations.html">Accommodations</a></li>
+          <li class="nav-item"><a class="nav-link" href="overview.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="header-section text-white text-center">
+    <div class="container">
+      <h1 class="header-title mb-3">Where to Stay</h1>
+      <p class="header-lead">Discover the finest accommodations in Negros Oriental for your perfect getaway</p>
+    </div>
+  </header>
+
+  <!-- Accommodations Grid -->
+  <section class="container py-5">
+    <div class="row g-4">
+      <!-- Atmosphere Resort & Spa -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow h-100">
+          <div class="position-relative">
+            <img src="https://picsum.photos/seed/atmosphere/800/500" class="card-img-top" alt="Atmosphere Resort & Spa">
+            <span class="accommodation-tag">Luxury Resort</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Atmosphere Resort & Spa</h5>
+            <div class="rating">★★★★★</div>
+            <p class="card-text">A 5-star luxury eco-resort in Dauin, offering world-class diving experiences, spa treatments, and oceanfront villas. Perfect for luxury travelers and diving enthusiasts.</p>
+            <div class="price-range">₱14,000 - ₱30,000 per night</div>
+            <div class="amenities">
+              <span class="amenity-badge">Pool</span>
+              <span class="amenity-badge">Spa</span>
+              <span class="amenity-badge">Restaurant</span>
+              <span class="amenity-badge">Diving</span>
+              <span class="amenity-badge">Free WiFi</span>
+            </div>
+            <div class="contact-info">
+              <small>
+                <strong>Location:</strong> Dauin, Negros Oriental<br>
+                <strong>Contact:</strong> +63 35 400 6940<br>
+                <strong>Email:</strong> info@atmosphereresorts.com
+              </small>
+            </div>
+            <a href="https://www.atmosphereresorts.com" class="btn btn-accommodation btn-success mt-auto w-100" target="_blank" rel="noopener">Book Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Coco Grande Hotel -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow h-100">
+          <div class="position-relative">
+            <img src="https://picsum.photos/seed/cocogrande/800/500" class="card-img-top" alt="Coco Grande Hotel">
+            <span class="accommodation-tag">City Hotel</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Coco Grande Hotel</h5>
+            <div class="rating">★★★★☆</div>
+            <p class="card-text">Centrally located in Dumaguete City, this hotel offers comfortable rooms, a swimming pool, and easy access to downtown attractions. Ideal for business travelers and tourists.</p>
+            <div class="price-range">₱2,500 - ₱4,500 per night</div>
+            <div class="amenities">
+              <span class="amenity-badge">Pool</span>
+              <span class="amenity-badge">Restaurant</span>
+              <span class="amenity-badge">Airport Shuttle</span>
+              <span class="amenity-badge">Free WiFi</span>
+            </div>
+            <div class="contact-info">
+              <small>
+                <strong>Location:</strong> Dumaguete City<br>
+                <strong>Contact:</strong> +63 35 422 1818<br>
+                <strong>Email:</strong> reservations@cocograndehotel.com
+              </small>
+            </div>
+            <a href="http://www.cocograndehotel.com" class="btn btn-accommodation btn-success mt-auto w-100" target="_blank" rel="noopener">Book Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Antulang Beach Resort -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow h-100">
+          <div class="position-relative">
+            <img src="https://picsum.photos/seed/antulang/800/500" class="card-img-top" alt="Antulang Beach Resort">
+            <span class="accommodation-tag">Beach Resort</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Antulang Beach Resort</h5>
+            <div class="rating">★★★★☆</div>
+            <p class="card-text">A secluded beachfront resort in Siaton offering native-inspired cottages, infinity pools, and spectacular ocean views on a cliff overlooking the Sulu Sea.</p>
+            <div class="price-range">₱5,000 - ₱12,000 per night</div>
+            <div class="amenities">
+              <span class="amenity-badge">Beach Access</span>
+              <span class="amenity-badge">Infinity Pool</span>
+              <span class="amenity-badge">Restaurant</span>
+              <span class="amenity-badge">Free WiFi</span>
+            </div>
+            <div class="contact-info">
+              <small>
+                <strong>Location:</strong> Siaton, Negros Oriental<br>
+                <strong>Contact:</strong> +63 35 225 9501<br>
+                <strong>Email:</strong> reservations@antulangbeach.com
+              </small>
+            </div>
+            <a href="http://www.antulangbeach.com" class="btn btn-accommodation btn-success mt-auto w-100" target="_blank" rel="noopener">Book Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Florentina Homes -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow h-100">
+          <div class="position-relative">
+            <img src="https://picsum.photos/seed/florentina/800/500" class="card-img-top" alt="Florentina Homes">
+            <span class="accommodation-tag">Boutique Hotel</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Florentina Homes</h5>
+            <div class="rating">★★★☆☆</div>
+            <p class="card-text">A cozy boutique hotel in Dumaguete offering affordable comfort with clean rooms, friendly service, and a convenient location near shopping areas and restaurants.</p>
+            <div class="price-range">₱1,800 - ₱3,200 per night</div>
+            <div class="amenities">
+              <span class="amenity-badge">Restaurant</span>
+              <span class="amenity-badge">Free WiFi</span>
+              <span class="amenity-badge">Room Service</span>
+              <span class="amenity-badge">City Center</span>
+            </div>
+            <div class="contact-info">
+              <small>
+                <strong>Location:</strong> Dumaguete City<br>
+                <strong>Contact:</strong> +63 35 422 8031<br>
+                <strong>Email:</strong> info@florentinahomes.com
+              </small>
+            </div>
+            <a href="http://www.florentinahomes.com" class="btn btn-accommodation btn-success mt-auto w-100" target="_blank" rel="noopener">Book Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- El Dorado Beach Resort -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow h-100">
+          <div class="position-relative">
+            <img src="https://picsum.photos/seed/eldorado/800/500" class="card-img-top" alt="El Dorado Beach Resort">
+            <span class="accommodation-tag">Dive Resort</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">El Dorado Beach Resort</h5>
+            <div class="rating">★★★★☆</div>
+            <p class="card-text">Located in Dauin, this dive resort offers comfortable beachfront accommodation with an on-site dive center, perfect for accessing the renowned diving spots of Apo Island.</p>
+            <div class="price-range">₱4,500 - ₱9,000 per night</div>
+            <div class="amenities">
+              <span class="amenity-badge">Beach Access</span>
+              <span class="amenity-badge">Dive Center</span>
+              <span class="amenity-badge">Restaurant</span>
+              <span class="amenity-badge">Pool</span>
+              <span class="amenity-badge">Free WiFi</span>
+            </div>
+            <div class="contact-info">
+              <small>
+                <strong>Location:</strong> Dauin, Negros Oriental<br>
+                <strong>Contact:</strong> +63 917 702 7337<br>
+                <strong>Email:</strong> info@eldoradoresort.com
+              </small>
+            </div>
+            <a href="http://www.eldoradoresort.com" class="btn btn-accommodation btn-success mt-auto w-100" target="_blank" rel="noopener">Book Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sierra Resort & Spa -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow h-100">
+          <div class="position-relative">
+            <img src="https://picsum.photos/seed/sierra/800/500" class="card-img-top" alt="Sierra Resort & Spa">
+            <span class="accommodation-tag">Mountain Resort</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Sierra Resort & Spa</h5>
+            <div class="rating">★★★★☆</div>
+            <p class="card-text">Set in the highlands of Valencia, this mountain resort offers cooler temperatures, stunning views, and proximity to waterfalls. Perfect for nature lovers seeking a tranquil escape.</p>
+            <div class="price-range">₱3,800 - ₱7,500 per night</div>
+            <div class="amenities">
+              <span class="amenity-badge">Spa</span>
+              <span class="amenity-badge">Restaurant</span>
+              <span class="amenity-badge">Mountain Views</span>
+              <span class="amenity-badge">Hot Spring</span>
+              <span class="amenity-badge">Free WiFi</span>
+            </div>
+            <div class="contact-info">
+              <small>
+                <strong>Location:</strong> Valencia, Negros Oriental<br>
+                <strong>Contact:</strong> +63 35 420 8675<br>
+                <strong>Email:</strong> reservations@sierraresort.ph
+              </small>
+            </div>
+            <a href="http://www.sierraresort.ph" class="btn btn-accommodation btn-success mt-auto w-100" target="_blank" rel="noopener">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Information -->
+  <section class="container mb-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="card bg-light border-0 shadow-sm p-4">
+          <h4 class="mb-3">Accommodation Tips</h4>
+          <ul class="mb-0">
+            <li><strong>Peak Season:</strong> Book accommodations 2-3 months in advance if traveling during December-May, especially around Holy Week.</li>
+            <li><strong>Locations:</strong> Stay in Dumaguete City for urban convenience, Dauin for diving, Valencia for mountains, and Siaton or Bais for more secluded experiences.</li>
+            <li><strong>Transportation:</strong> Many resorts offer airport transfers - inquire during booking.</li>
+            <li><strong>Local Options:</strong> Consider pension houses and homestays for budget-friendly authentic experiences.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Negros Oriental Tourism Office | Find Your Perfect Stay in Negros Oriental</p>
+    </div>
+  </footer>
+</body>
+</html>

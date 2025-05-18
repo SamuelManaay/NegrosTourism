@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provincial Overview - Negros Oriental Tourism</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1a2a3a;
+      --secondary: #3498db;
+      --accent: #e74c3c;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --text-primary: #2c3e50;
+      --text-secondary: #6c757d;
+    }
+    
+    /* Ensure variables are used and not overridden by browser defaults or Bootstrap */
+    body {
+      color: var(--text-primary) !important;
+      background-color: var(--light) !important;
+    }
+    
+    /* .navbar, footer {
+      background-color: var(--primary) !important;
+    } */
+    
+    .section-title, .info-card h3 {
+      color: var(--primary) !important;
+    }
+    
+    .info-card i, .category-tag, .btn-explore, .social-links a:hover, .quick-link:hover:before {
+      background-color: var(--secondary) !important;
+      color: #fff !important;
+    }
+    
+    body {
+      font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background-color: #f9f9f9;
+    }
+    
+    .navbar-nav .nav-link.active {
+      font-weight: bold;
+      border-bottom: 2px solid white;
+    }
+    
+    /* .navbar-brand {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: -0.5px;
+    } */
+    
+    /* .nav-link {
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      position: relative;
+      padding: 0.5rem 1rem !important;
+      margin: 0 0.25rem;
+    } */
+    
+    /* .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background-color: var(--secondary);
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover:after,
+    .nav-link.active:after {
+      width: 80%;
+      left: 10%;
+    } */
+    
+    .hero {
+      background: linear-gradient(135deg, rgba(26, 42, 58, 0.9), rgba(41, 128, 185, 0.8)), 
+                  url('https://images.unsplash.com/photo-1582977329855-e6646a7b1d0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to top, rgba(249, 249, 249, 1), rgba(249, 249, 249, 0));
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero h1 {
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    .hero p {
+      font-weight: 300;
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 2.5rem;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      display: inline-block;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      width: 60px;
+      height: 4px;
+      background: var(--secondary);
+      border-radius: 2px;
+    }
+    
+    .text-center .section-title:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .info-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      margin-bottom: 2rem;
+      background-color: white;
+    }
+    
+    .info-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+    
+    .info-card .card-body {
+      padding: 2.5rem;
+    }
+    
+    .info-card h3 {
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+    
+    .info-card i {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 1.5rem;
+      background: rgba(52, 152, 219, 0.1);
+      height: 80px;
+      width: 80px;
+      line-height: 80px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .info-card:hover i {
+      background: var(--secondary);
+      color: white;
+      transform: rotateY(180deg);
+    }
+    
+    .info-card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+    
+    .category-tag {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(52, 152, 219, 0.9);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      z-index: 2;
+    }
+    
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 5rem 0 2rem;
+      position: relative;
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(to right, var(--secondary), var(--accent));
+    }
+    
+    .footer-title {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+    
+    .social-links {
+      margin-top: 1.5rem;
+    }
+    
+    .social-links a {
+      color: white;
+      font-size: 1.3rem;
+      margin-right: 1rem;
+      transition: transform 0.3s ease;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+    
+    .social-links a:hover {
+      color: white;
+      transform: translateY(-3px);
+      background: var(--secondary);
+    }
+    
+    .btn-explore {
+      background: linear-gradient(to right, var(--secondary), #2980b9);
+      color: white;
+      border-radius: 50px;
+      padding: 12px 30px;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    }
+    
+    .btn-explore:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(to right, #2980b9, var(--secondary));
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+    
+    .btn-explore:hover {
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(52, 152, 219, 0.5);
+    }
+    
+    .btn-explore:hover:before {
+      width: 100%;
+    }
+    
+    .gallery-img {
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .gallery-img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .lead {
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+    
+    .quick-link {
+      display: block;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.75rem;
+      transition: all 0.2s ease;
+      position: relative;
+      padding-left: 15px;
+    }
+    
+    .quick-link:before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .quick-link:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+    
+    .quick-link:hover:before {
+      color: var(--secondary);
+    }
+    
+    .footer-text {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+    }
+    
+    .footer-bottom {
+      background-color: rgba(0,0,0,0.2);
+      padding: 20px 0;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 60vh;
+      }
+      
+      .info-card .card-body {
+        padding: 1.5rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+    .header-section {
+      background: linear-gradient(135deg, #2980b9);
+      padding: 4rem 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Modern Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Negros Oriental</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="accomodations.html">Accommodations</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="overview.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <!-- <section class="hero">
+    <div class="container text-center hero-content">
+      <h1 class="display-3 fw-bold mb-4">Discover Negros Oriental</h1>
+      <p class="lead fs-4 mb-5">Experience the breathtaking landscapes, vibrant culture, and warm hospitality of our tropical paradise</p>
+      <a href="#overview" class="btn btn-explore">Explore The Province</a>
+    </div>
+  </section> -->
+
+  <header class="header-section text-white text-center">
+    <div class="container">
+      <h1 class="header-title mb-3">Negros Oriental Overview</h1>
+      <p class="header-lead">Discover the current trends, latest developments, and essential facts about our vibrant province</p>
+    </div>
+  </header>
+
+  <!-- Overview Section -->
+  <section id="overview" class="py-5 bg-light">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="section-title d-inline-block">About Negros Oriental</h2>
+        <p class="lead">A tropical paradise with rich culture and breathtaking landscapes</p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Geography Card -->
+        <div class="col-md-6 col-lg-4">
+          <div class="info-card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-mountain"></i>
+              <h3>Geography</h3>
+              <p>Negros Oriental occupies the southeastern portion of Negros Island, spanning 5,402 square kilometers of mountainous terrain and coastal beauty. The province is renowned for its stunning natural landscapes and rich biodiversity.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tourism Card -->
+        <div class="col-md-6 col-lg-4">
+          <div class="info-card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-umbrella-beach"></i>
+              <h3>Tourism</h3>
+              <p>Discover hidden gems like the Twin Lakes in Sibulan and the spectacular Mabinay Caves. Experience vibrant festivals like Buglasan and Yag-yag, and enjoy national events including PBA games and the colorful Kitefest.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Infrastructure Card -->
+        <div class="col-md-6 col-lg-4">
+          <div class="info-card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-road"></i>
+              <h3>Infrastructure</h3>
+              <p>The province boasts modern facilities including the Lamberto Macias Sports Center and Lorenzo Teves Memorial Aquacenter. Our healthcare network serves the region with hospitals, diagnostic centers, and rehabilitation facilities.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Social Services Card -->
+        <div class="col-md-6 col-lg-4">
+          <div class="info-card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-hands-helping"></i>
+              <h3>Social Services</h3>
+              <p>We prioritize child and women's welfare through UNICEF partnerships. Our Tamlang resettlement project provides comprehensive support with education, health, and livelihood facilities for communities in need.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Economic Development Card -->
+        <div class="col-md-6 col-lg-4">
+          <div class="info-card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-chart-line"></i>
+              <h3>Economic Development</h3>
+              <p>Through our progressive Investment Code, we welcome local and international businesses. The Investment Promotions Center actively supports economic growth and development opportunities throughout the province.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Environment Card -->
+        <div class="col-md-6 col-lg-4">
+          <div class="info-card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-leaf"></i>
+              <h3>Environment</h3>
+              <p>We're committed to sustainability through clean and green initiatives and wildlife conservation. Our weekly employee training programs ensure our team is equipped to protect Negros Oriental's natural treasures.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section class="py-5">
+    <div class="container py-4">
+      <h2 class="section-title mb-5">Featured Destinations</h2>
+      <div class="row g-4">
+        <!-- Destination 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="info-card h-100">
+            <div class="position-relative">
+              <span class="category-tag">Beach</span>
+              <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Manjuyod Sandbar" class="card-img-top" style="height: 220px; object-fit: cover;">
+            </div>
+            <div class="card-body">
+              <h3>Manjuyod Sandbar</h3>
+              <p class="mb-4">Experience the "Maldives of the Philippines" with its pristine white sandbar that emerges during low tide, surrounded by crystal-clear turquoise waters.</p>
+              <a href="destinations.html" class="btn btn-explore w-100">Explore Manjuyod</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Destination 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="info-card h-100">
+            <div class="position-relative">
+              <span class="category-tag">Waterfall</span>
+              <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Casaroro Falls" class="card-img-top" style="height: 220px; object-fit: cover;">
+            </div>
+            <div class="card-body">
+              <h3>Casaroro Falls</h3>
+              <p class="mb-4">Tucked in Valencia's lush mountains, this majestic 100-foot waterfall plunges into a deep natural pool, perfect for nature enthusiasts and photographers.</p>
+              <a href="destinations.html" class="btn btn-explore w-100">Explore Casaroro</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Destination 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="info-card h-100">
+            <div class="position-relative">
+              <span class="category-tag">Mountain</span>
+              <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mount Talinis" class="card-img-top" style="height: 220px; object-fit: cover;">
+            </div>
+            <div class="card-body">
+              <h3>Mount Talinis</h3>
+              <p class="mb-4">Known as the "Cuernos de Negros," this volcanic mountain offers diverse ecosystems, crater lakes, and panoramic views of the province and surrounding seas.</p>
+              <a href="destinations.html" class="btn btn-explore w-100">Explore Talinis</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-5 bg-light">
+    <div class="container py-4">
+      <h2 class="section-title mb-5">Glimpses of Negros Oriental</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Beach" class="img-fluid gallery-img w-100">
+        </div>
+        <div class="col-md-4">
+          <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Festival" class="img-fluid gallery-img w-100">
+        </div>
+        <div class="col-md-4">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Nature" class="img-fluid gallery-img w-100">
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="gallery.html" class="btn btn-explore">View Full Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-5" style="background: linear-gradient(135deg, var(--secondary), #2980b9);">
+    <div class="container py-4 text-center text-white">
+      <h2 class="fw-bold mb-4">Ready to Experience Negros Oriental?</h2>
+      <p class="lead mb-4">Start planning your adventure today and discover the hidden gems of our beautiful province</p>
+      <a href="contactus.html" class="btn btn-light px-4 py-2">Contact Us For Travel Tips</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="footer-title">Negros Oriental Tourism</h4>
+          <p class="footer-text">Discover the beauty, culture, and warm hospitality of our tropical paradise. From pristine beaches to majestic mountains, Negros Oriental awaits your exploration.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+          <h4 class="footer-title">Explore</h4>
+          <a href="index.html" class="quick-link">Home</a>
+          <a href="about.html" class="quick-link">About</a>
+          <a href="destinations.html" class="quick-link">Destinations</a>
+          <a href="events.html" class="quick-link">Events</a>
+          <a href="gallery.html" class="quick-link">Gallery</a>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+          <h4 class="footer-title">Quick Links</h4>
+          <a href="accommodations.html" class="quick-link">Accommodations</a>
+          <a href="transportation.html" class="quick-link">Transportation</a>
+          <a href="activities.html" class="quick-link">Activities</a>
+          <a href="dining.html" class="quick-link">Dining</a>
+          <a href="faq.html" class="quick-link">FAQs</a>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <h4 class="footer-title">Contact Us</h4>
+          <p class="footer-text"><i class="fas fa-map-marker-alt me-2"></i> Provincial Capitol, Dumaguete City</p>
+          <p class="footer-text"><i class="fas fa-phone me-2"></i> +63 (35) 225-0000</p>
+          <p class="footer-text"><i class="fas fa-envelope me-2"></i> tourism@negor.gov.ph</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      <div class="container">
+        <p class="mb-0">&copy; 2025 Negros Oriental Tourism Office. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

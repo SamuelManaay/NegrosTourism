@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Negros Oriental Tourism - Discover Natural Wonders</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --secondary-color: #1e5631;
+      --accent-color: #ffc107;
+    }
+    
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1920/800') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+    }
+    
+    .navbar {
+      transition: all 0.3s ease;
+      padding: 1rem 2rem;
+    }
+    
+    .navbar.scrolled {
+      background-color: rgba(33, 37, 41, 0.95) !important;
+      padding: 0.5rem 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    
+    .nav-link {
+      font-weight: 500;
+      margin: 0 10px;
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+
+    .highlight-box {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .highlight-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .highlight-img {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .video-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .welcome-section {
+      background-color: #f8f9fa;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .accent-line {
+      width: 80px;
+      height: 4px;
+      background-color: var(--accent-color);
+      margin: 15px auto 25px;
+    }
+    
+    .bg-accent {
+      background-color: var(--accent-color);
+    }
+
+    .btn-explore {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-explore:hover {
+      background-color: #143920;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(30, 86, 49, 0.3);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+    }
+
+    .testimonial {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .quote-icon {
+      font-size: 2rem;
+      color: var(--accent-color);
+      opacity: 0.5;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+    }
+
+    .footer-links a {
+      color: #b0b0b0;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      text-decoration: none;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: #333;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <span class="text-accent">Negros Oriental</span> Tourism
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="destinations.html">Destinations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="accomodations.html">Accommodations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="overview.html">Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contactus.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <header class="hero-section">
+    <div class="hero-content">
+      <h1 class="display-3 fw-bold text-white mb-3">Experience the Magic of Negros Oriental</h1>
+      <div class="accent-line"></div>
+      <p class="lead text-white mb-5">Naturally beautiful, richly diverse, endlessly captivating</p>
+      <a href="destinations.html" class="btn btn-explore">Explore Destinations <i class="fas fa-arrow-right ms-2"></i></a>
+    </div>
+  </header>
+
+  <!-- Feature Cards Section -->
+  <section class="container py-5 mt-5">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Discover Our Natural Wonders</h2>
+      <div class="accent-line"></div>
+      <p class="lead">Explore the diverse beauty of Negros Oriental</p>
+    </div>
+    
+    <div class="row g-4">
+      <!-- Manjuyod Sandbar -->
+      <div class="col-lg-4 col-md-6">
+        <div class="highlight-box h-100">
+          <div class="position-relative">
+            <img src="Images\manjuyod.png" class="highlight-img w-100" alt="Manjuyod Sandbar">
+            <span class="position-absolute top-0 end-0 bg-accent text-white py-1 px-3 m-3 rounded-pill fw-bold">Beach</span>
+          </div>
+          <div class="p-4">
+            <h3>Manjuyod Sandbar</h3>
+            <p>Dubbed the "Maldives of the Philippines," Manjuyod Sandbar in Bais is a breathtaking stretch of white sand that appears during low tide. Enjoy dolphin watching, floating cottages, and island hopping in this unique paradise.</p>
+            <a href="#" class="btn btn-sm btn-secondary mt-2">Explore Manjuyod <i class="fas fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pulangbato Falls -->
+      <div class="col-lg-4 col-md-6">
+        <div class="highlight-box h-100">
+          <div class="position-relative">
+            <img src="Images\pulangbato.png" class="highlight-img w-100" alt="Pulangbato Falls">
+            <span class="position-absolute top-0 end-0 bg-accent text-white py-1 px-3 m-3 rounded-pill fw-bold">Waterfall</span>
+          </div>
+          <div class="p-4">
+            <h3>Pulangbato Falls</h3>
+            <p>Located in Valencia, Pulangbato Falls is famous for its unique reddish rocks and refreshing pools, surrounded by lush greenery. The distinctive rusty-red color comes from the sulfur deposits in the area.</p>
+            <a href="#" class="btn btn-sm btn-secondary mt-2">Explore Pulangbato <i class="fas fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Casaroro Falls -->
+      <div class="col-lg-4 col-md-6">
+        <div class="highlight-box h-100">
+          <div class="position-relative">
+            <img src="Images\Casarorro.jpg" class="highlight-img w-100" alt="Casaroro Falls">
+            <span class="position-absolute top-0 end-0 bg-accent text-white py-1 px-3 m-3 rounded-pill fw-bold">Waterfall</span>
+          </div>
+          <div class="p-4">
+            <h3>Casaroro Falls</h3>
+            <p>A hidden gem in Valencia, Casaroro Falls features a dramatic 100-foot drop and is accessible via a scenic trek through the forest. The narrow stream of water creates a mesmerizing sight worth the journey.</p>
+            <a href="#" class="btn btn-sm btn-secondary mt-2">Explore Casaroro <i class="fas fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Twin Lakes -->
+      <div class="col-lg-4 col-md-6">
+        <div class="highlight-box h-100">
+          <div class="position-relative">
+            <img src="Images\twinlakes.jpg" class="highlight-img w-100" alt="Twin Lakes of Balinsasayao and Danao">
+            <span class="position-absolute top-0 end-0 bg-accent text-white py-1 px-3 m-3 rounded-pill fw-bold">Lakes</span>
+          </div>
+          <div class="p-4">
+            <h3>Twin Lakes</h3>
+            <p>Nestled in Sibulan, the Twin Lakes of Balinsasayao and Danao are a tranquil natural park perfect for kayaking, bird watching, and scenic boat rides. Surrounded by lush rainforest, these crater lakes offer a peaceful escape.</p>
+            <a href="#" class="btn btn-sm btn-secondary mt-2">Explore Twin Lakes <i class="fas fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Apo Island -->
+      <div class="col-lg-4 col-md-6">
+        <div class="highlight-box h-100">
+          <div class="position-relative">
+            <img src="Images\apoisland.png" class="highlight-img w-100" alt="Apo Island">
+            <span class="position-absolute top-0 end-0 bg-accent text-white py-1 px-3 m-3 rounded-pill fw-bold">Island</span>
+          </div>
+          <div class="p-4">
+            <h3>Apo Island</h3>
+            <p>Apo Island is a world-famous marine sanctuary known for its vibrant coral reefs, abundant marine life, and opportunities to swim with sea turtles. It's a must-visit for snorkeling, diving, and eco-adventures.</p>
+            <a href="#" class="btn btn-sm btn-secondary mt-2">Explore Apo Island <i class="fas fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tierra Alta Lighthouse -->
+      <div class="col-lg-4 col-md-6">
+        <div class="highlight-box h-100">
+          <div class="position-relative">
+            <img src="Images\tieraalta.png" class="highlight-img w-100" alt="Tierra Alta Lighthouse">
+            <span class="position-absolute top-0 end-0 bg-accent text-white py-1 px-3 m-3 rounded-pill fw-bold">Landmark</span>
+          </div>
+          <div class="p-4">
+            <h3>Tierra Alta Lighthouse</h3>
+            <p>This iconic lighthouse in Valencia offers panoramic views of the mountains and sea, and is a popular spot for photos and events. Explore the Greek-inspired architecture and enjoy the scenic surroundings.</p>
+            <a href="#" class="btn btn-sm btn-secondary mt-2">Explore Tierra Alta <i class="fas fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="container-fluid bg-light py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="video-container">
+            <video id="negorVideo" src="NegOr.mp4" class="w-100" controls autoplay loop playsinline muted>
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h2 class="fw-bold mb-4">Experience Negros Oriental</h2>
+          <div class="accent-line mx-0"></div>
+          <p class="mb-4">Take a visual journey through our province's stunning landscapes, vibrant culture, and unforgettable experiences. Negros Oriental offers a perfect blend of adventure, relaxation, and cultural immersion.</p>
+          <div class="row g-3 mt-4">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <div class="me-3 text-secondary">
+                  <i class="fas fa-mountain fa-2x"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Natural Wonders</h5>
+                  <p class="mb-0 text-muted">From mountains to seas</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <div class="me-3 text-secondary">
+                  <i class="fas fa-water fa-2x"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Marine Paradise</h5>
+                  <p class="mb-0 text-muted">World-class diving spots</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <div class="me-3 text-secondary">
+                  <i class="fas fa-utensils fa-2x"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Culinary Delights</h5>
+                  <p class="mb-0 text-muted">Local flavors to savor</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <div class="me-3 text-secondary">
+                  <i class="fas fa-theater-masks fa-2x"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Rich Culture</h5>
+                  <p class="mb-0 text-muted">Festivals and traditions</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Text -->
+  <section class="container py-5">
+    <div class="welcome-section p-5">
+      <div class="row">
+        <div class="col-lg-10 mx-auto text-center">
+          <h2 class="fw-bold mb-3">Welcome to Negros Oriental</h2>
+          <div class="accent-line"></div>
+          <p class="fs-5 mb-4">Greetings, travelers everywhere who yearn for nature at its most natural. Negros Oriental is what you are looking for. Our Province is endowed with such diversity in landscape, waters, and people that it is arguably the richest of tourism destinations in the Visayas.</p>
+          <p class="fs-5 mb-4">We have any number of falls and caves, beaches and dive sites, mountains, lakes, rugged terrain for adventure, serene sites for leisure. At every turn is a feast for the senses. Everyone awaits to welcome you with a warm, <strong>Dayon!</strong></p>
+          <p class="fs-4 fw-bold text-secondary">When you have to make a choice: <span class="text-success">Negros Oriental, <em>Naturally!</em></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="container-fluid py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">What Visitors Say</h2>
+        <div class="accent-line"></div>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="testimonial h-100">
+            <div class="quote-icon mb-3">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="mb-4">"Negros Oriental was the highlight of our Philippines trip. The Twin Lakes were breathtaking, and the locals were incredibly hospitable."</p>
+            <div class="d-flex align-items-center">
+              <!-- <img src="/api/placeholder/50/50" class="rounded-circle me-3" alt="Visitor"> -->
+              <div>
+                <h5 class="mb-0">Maria S.</h5>
+                <p class="text-muted mb-0">Spain</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="testimonial h-100">
+            <div class="quote-icon mb-3">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="mb-4">"The diving experience at Apo Island was world-class. I saw so many sea turtles and the coral reef was pristine. Will definitely come back!"</p>
+            <div class="d-flex align-items-center">
+              <!-- <img src="/api/placeholder/50/50" class="rounded-circle me-3" alt="Visitor"> -->
+              <div>
+                <h5 class="mb-0">James L.</h5>
+                <p class="text-muted mb-0">Australia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="testimonial h-100">
+            <div class="quote-icon mb-3">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="mb-4">"We loved exploring the waterfalls and hot springs. Casaroro Falls was magnificent, and the journey there was an adventure in itself!"</p>
+            <div class="d-flex align-items-center">
+              <!-- <img src="/api/placeholder/50/50" class="rounded-circle me-3" alt="Visitor"> -->
+              <div>
+                <h5 class="mb-0">Naomi K.</h5>
+                <p class="text-muted mb-0">Japan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="container-fluid py-5" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1920/600') center/cover no-repeat;">
+    <div class="container text-center text-white py-5">
+      <h2 class="display-5 fw-bold mb-3">Ready for an Unforgettable Adventure?</h2>
+      <p class="lead mb-4">Start planning your perfect getaway to Negros Oriental today</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="destinations.html" class="btn btn-light btn-lg px-4">Explore Destinations</a>
+        <a href="contactus.html" class="btn btn-outline-light btn-lg px-4">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-white py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h4 class="fw-bold mb-4">Negros Oriental Tourism</h4>
+          <p>Promoting sustainable tourism and showcasing the natural beauty and cultural heritage of Negros Oriental Province.</p>
+          <div class="social-icons mt-4">
+            <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-4 footer-links">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="destinations.html">Destinations</a></li>
+            <li class="mb-2"><a href="accomodations.html">Accommodations</a></li>
+            <li class="mb-2"><a href="contactus.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 footer-links">
+          <h5 class="mb-3">Top Destinations</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#">Apo Island</a></li>
+            <li class="mb-2"><a href="#">Twin Lakes</a></li>
+            <li class="mb-2"><a href="#">Casaroro Falls</a></li>
+            <li class="mb-2"><a href="#">Manjuyod Sandbar</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-4">
+          <h5 class="mb-3">Contact Information</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Provincial Capitol, Dumaguete City</li>
+            <li class="mb-2"><i class="fas fa-phone me-2"></i> (035) 123-4567</li>
+            <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@negrosorientaltourism.gov.ph</li>
+          </ul>
+        </div>
+      </div>
+      
+      <hr class="my-4 bg-light opacity-25">
+      
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy; 2025 Negros Oriental Tourism Office. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+            <li class="list-inline-item"><span class="mx-2">|</span></li>
+            <li class="list-inline-item"><a href="#" class="text-white">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Autoplay video when loaded
+    window.addEventListener('DOMContentLoaded', function() {
+      var video = document.getElementById('negorVideo');
+      video.muted = true;
+      video.play();
+    });
+  </script>
+</body>
+</html>

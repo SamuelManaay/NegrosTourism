@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Destinations - Negros Oriental</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <style>
+    .navbar-nav .nav-link.active {
+      font-weight: bold;
+      border-bottom: 2px solid white;
+    }
+    
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      border: none;
+      border-radius: 0.5rem;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+    
+    .card-title {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 0.75rem;
+    }
+    
+    .card-text {
+      color: #505962;
+      font-size: 0.95rem;
+      flex-grow: 1;
+    }
+    
+    .btn-destination {
+      background-color: #3498db;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      border-radius: 0.25rem;
+    }
+    
+    .btn-destination:hover {
+      background-color: #2980b9;
+    }
+    
+    .header-section {
+      background: linear-gradient(135deg, #3498db, #1a5276);
+      padding: 4rem 0;
+    }
+    
+    .header-title {
+      font-weight: 700;
+      font-size: 2.75rem;
+    }
+    
+    .header-lead {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    
+    .destination-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: rgba(0,0,0,0.6);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(26, 42, 58, 0.9), rgba(41, 128, 185, 0.8)), 
+                  url('https://images.unsplash.com/photo-1582977329855-e6646a7b1d0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to top, rgba(249, 249, 249, 1), rgba(249, 249, 249, 0));
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero h1 {
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    .hero p {
+      font-weight: 300;
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 60vh;
+      }
+      
+      .info-card .card-body {
+        padding: 1.5rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Negros Oriental</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="destinations.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="accomodations.html">Accommodations</a></li>
+          <li class="nav-item"><a class="nav-link" href="overview.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="header-section text-white text-center">
+    <div class="container">
+      <h1 class="header-title mb-3">Featured Destinations</h1>
+      <p class="header-lead">Discover the breathtaking natural wonders of Negros Oriental</p>
+    </div>
+  </header>
+
+  <!-- Destinations Grid -->
+  <section class="container py-5">
+    <div class="row g-4">
+      <!-- Manjuyod Sandbar -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow h-100">
+          <div class="position-relative">
+            <img src="Images/manjuyod.png" class="card-img-top" alt="Manjuyod Sandbar">
+            <span class="destination-tag">Beach</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Manjuyod Sandbar</h5>
+            <p class="card-text">Dubbed the "Maldives of the Philippines," Manjuyod Sandbar in Bais is a breathtaking stretch of white sand that appears during low tide. Enjoy dolphin watching, floating cottages, and island hopping in this unique paradise.</p>
+            <a href="https://www.ladyandhersweetescapes.com/2017/01/manjuyod-sandbar-bais-negros.html" class="btn btn-destination btn-primary mt-auto w-100" target="_blank" rel="noopener">Explore Manjuyod</a>
+          </div>
+        </div>
+      </div>
+      <!-- Pulangbato Falls -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow h-100">
+          <div class="position-relative">
+            <img src="Images/pulangbato.png" class="card-img-top" alt="Pulangbato Falls">
+            <span class="destination-tag">Waterfall</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Pulangbato Falls</h5>
+            <p class="card-text">Located in Valencia, Pulangbato Falls is famous for its unique reddish rocks and refreshing pools, surrounded by lush greenery. The distinctive rusty-red color comes from the sulfur deposits in the area.</p>
+            <a href="https://www.lakwatsero.com/spots/pulangbato-falls-malabo-falls-the-red-waterfalls-of-valencia/" class="btn btn-destination btn-primary mt-auto w-100" target="_blank" rel="noopener">Explore Pulangbato</a>
+          </div>
+        </div>
+      </div>
+      <!-- Casaroro Falls -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow h-100">
+          <div class="position-relative">
+            <img src="Images/Casarorro.jpg" class="card-img-top" alt="Casaroro Falls">
+            <span class="destination-tag">Waterfall</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Casaroro Falls</h5>
+            <p class="card-text">A hidden gem in Valencia, Casaroro Falls features a dramatic 100-foot drop and is accessible via a scenic trek through the forest. The narrow stream of water creates a mesmerizing sight worth the journey.</p>
+            <a href="https://osmiva.com/hike-valencias-casaroro-falls-negros-oriental-philippines/" class="btn btn-destination btn-primary mt-auto w-100" target="_blank" rel="noopener">Explore Casaroro</a>
+          </div>
+        </div>
+      </div>
+      <!-- Twin Lakes of Balinsasayao and Danao -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow h-100">
+          <div class="position-relative">
+            <img src="Images/twinlakes.jpg" class="card-img-top" alt="Twin Lakes of Balinsasayao and Danao">
+            <span class="destination-tag">Lakes</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Twin Lakes of Balinsasayao and Danao</h5>
+            <p class="card-text">Nestled in Sibulan, the Twin Lakes of Balinsasayao and Danao are a tranquil natural park perfect for kayaking, bird watching, and scenic boat rides. Surrounded by lush rainforest, these crater lakes offer a peaceful escape.</p>
+            <a href="https://www.lakadpilipinas.com/2013/07/balinsasayao-twin-lakes-negros-oriental.html" class="btn btn-destination btn-primary mt-auto w-100" target="_blank" rel="noopener">Explore Twin Lakes</a>
+          </div>
+        </div>
+      </div>
+      <!-- Apo Island -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow h-100">
+          <div class="position-relative">
+            <img src="Images/apoisland.png" class="card-img-top" alt="Apo Island">
+            <span class="destination-tag">Island</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Apo Island</h5>
+            <p class="card-text">Apo Island is a world-famous marine sanctuary known for its vibrant coral reefs, abundant marine life, and opportunities to swim with sea turtles. It's a must-visit for snorkeling, diving, and eco-adventures.</p>
+            <a href="https://www.weseektravel.com/apo-island/" class="btn btn-destination btn-primary mt-auto w-100" target="_blank" rel="noopener">Explore Apo Island</a>
+          </div>
+        </div>
+      </div>
+      <!-- Tierra Alta Lighthouse -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow h-100">
+          <div class="position-relative">
+            <img src="Images/tieraalta.png" class="card-img-top" alt="Tierra Alta Lighthouse">
+            <span class="destination-tag">Landmark</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Tierra Alta Lighthouse</h5>
+            <p class="card-text">This iconic lighthouse in Valencia offers panoramic views of the mountains and sea, and is a popular spot for photos and events. Explore the Greek-inspired architecture and enjoy the scenic surroundings.</p>
+            <a href="http://bisayatraveler.com/2024/11/24/tierra-alta-dumaguete/" class="btn btn-destination btn-primary mt-auto w-100" target="_blank" rel="noopener">Explore Tierra Alta</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Negros Oriental Tourism Office | Discover the Beauty of Negros Oriental</p>
+    </div>
+  </footer>
+</body>
+</html>
