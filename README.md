@@ -27,7 +27,7 @@ Welcome to the official source code for the **Negros Oriental Tourism Website** 
 
 ## 🌐 Live Demo
 
-> If deployed: [Visit the Website](https://explorenegrosoriental.netlify.app/)
+> Visit the Website : (https://explorenegrosoriental.netlify.app/)
 
 
 
